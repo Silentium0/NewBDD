@@ -1,4 +1,4 @@
-package BDD.utillities;
+package io.loop.utilities;
 
 public class LoopCampContacts {
 

@@ -1,4 +1,4 @@
-package BDD.utillities;
+package io.loop.utilities;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

@@ -1,4 +1,4 @@
-package BDD.utillities;
+package io.loop.utilities;
 
 import io.cucumber.java.Scenario;
 import org.junit.Assert;
