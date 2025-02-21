@@ -28,11 +28,13 @@ public class Hooks {
         Driver.closeDriver();
     }
 
-    @AfterStep
+    //@AfterStep
     public void tearsScreenShot(Scenario scenario){
         final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
         scenario.attach(screenshot, "image/png", scenario.getName());  // take screenshot after every step
     }
+
+
 
 
 
