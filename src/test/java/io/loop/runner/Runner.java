@@ -13,9 +13,6 @@ import org.junit.runner.RunWith;
         glue = "io/loop/step_def",
         dryRun = false,
         tags = "@form"
-
-
-
 )
 
 public class Runner {
