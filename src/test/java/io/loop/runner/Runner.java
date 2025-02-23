@@ -11,8 +11,8 @@ import org.junit.runner.RunWith;
                   "json:target/json-reports/json-report.json"},
         features = "src/test/resources/features",
         glue = "io/loop/step_def",
-        dryRun = false,
-        tags = " @test1"
+        dryRun = true,
+        tags = "@form"
 
 
 
