@@ -12,10 +12,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "io/loop/step_def",
         dryRun = false,
-        tags = "@test3"
-
-
-
+        tags = "@form"
 )
 
 public class Runner {
