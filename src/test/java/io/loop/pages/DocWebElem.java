@@ -19,8 +19,11 @@ public class DocWebElem {
 
     @FindBy(xpath = "//span[contains(text(),' Continue ')]/..")
     public WebElement continueButton;
+
     @FindBy(xpath = "//span[contains(text(),'Home')]")
     public WebElement Home;
+
+
 
     public DocWebElem() {
         PageFactory.initElements(Driver.getDriver(),this);
