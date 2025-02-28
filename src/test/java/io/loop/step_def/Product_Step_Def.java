@@ -32,7 +32,7 @@ public class Product_Step_Def {
 
     }
     @Then("User should be able to see expected prices in the following products")
-    public void user_should_be_able_to_see_expected_prices_in_the_following_products(List<Map<String, String >> productDetails ) throws InterruptedException {
+    public void user_should_be_able_to_see_expected_prices_in_the_following_products(List<Map<String, String>> productDetails ) throws InterruptedException {
         for (Map<String , String> productDetail : productDetails) {
             productWebElem.clickCategory(productDetail.get("Category"));
             productWebElem.productPrice(productDetail.get("Product"));

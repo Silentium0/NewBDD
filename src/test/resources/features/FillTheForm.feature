@@ -14,7 +14,7 @@ Feature: user feel te form
     And user enters credit "<car number>"
     And user enters xp num "<expiration date>"
     And user enters process order button
-    Then user should see "Chuck Norris" in the first row of the table
+    Then user should see "New order has been successfully added." in the first row of the table
     Examples:
       | quantity | name         | street           | city     | state    | zip   | car number       | expiration date |
       | 2       | Chuck Norris | 1100  Long way dr | Charlore | Virginia | 22011 | 1111222233334444 | 12/25           |

@@ -26,12 +26,9 @@ public class ProductWebElem {
             return act.substring(1);
 
         }catch (StaleElementReferenceException e){
-            String act =  BrowserUtils.waitForVisibility(Driver.getDriver().findElement(By.xpath("//a[contains(text(),'"+product+"')]/../following-sibling::h5")),20 ).getText();
-            return act.substring(1);
+            return product;
+
         }
-
-
-
 
     }
 
