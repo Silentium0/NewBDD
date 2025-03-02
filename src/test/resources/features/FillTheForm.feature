@@ -1,6 +1,6 @@
 Feature: user feel te form
 
-  @form
+  @smoke @regression
   Scenario Outline: user should be able to place order and order should be seen in page
     Given user is already logged in and navigated to order page
     When user selects product type "FamilyAlbum"
