@@ -59,16 +59,6 @@ public class Driver {
                     drivePool.get().manage().window().maximize();
                     drivePool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.valueOf(ConfigurationReader.getProperty("timeout"))));
                     break;
-                case "chrome-linux":
-                    WebDriverManager.chromedriver().setup();
-                    ChromeOptions chromeOptions;
-                    chromeOptions = new ChromeOptions();
-                    chromeOptions.addArguments("--headless");
-                    chromeOptions.addArguments("--no-sandbox");
-                    chromeOptions.addArguments("--disable-dev-shm-usage");
-                    //driver = new ChromeDriver(chromeOptions);
-                    drivePool.set(new ChromeDriver(chromeOptions));
-                    break;
                 case "remote-chrome-linux":
                     try {
                         // assign your grid server address
