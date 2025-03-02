@@ -1,6 +1,7 @@
 Feature: product data table practice
 
-  @listOfMap
+
+  @smoke @regression
   Scenario: verify each product price
     Given User is on the HomePage
     Then User should be able to see expected prices in the following products

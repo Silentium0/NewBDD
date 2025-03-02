@@ -1,6 +1,6 @@
 Feature: Validation
 
-  @valid
+  @regression @smoke
   Scenario Outline: user validate items
     Given User login as "<Login>"
     Then validate "<items>"
