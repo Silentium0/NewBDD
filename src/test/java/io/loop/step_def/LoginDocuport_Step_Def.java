@@ -9,6 +9,8 @@ import io.loop.utilities.ConfigurationReader;
 import io.loop.utilities.Driver;
 import org.junit.Assert;
 
+import java.util.Map;
+
 public class LoginDocuport_Step_Def  {
     DocWebElem docWebElem =  new DocWebElem();
 
@@ -45,4 +47,32 @@ public class LoginDocuport_Step_Def  {
     }
 
 
+    @Given("user login docuport")
+    public void userLoginDocuport() {
+
+    }
+
+    @Given("User login with Map")
+    public void userLogin(Map<String, String> data) {
+        for (Map.Entry<String, String> entry : data.entrySet()) {
+            String key = entry.getKey();
+            String value = entry.getValue();
+            switch (key) {
+                case "username":
+                    docWebElem.username.clear();
+                    docWebElem.username.sendKeys(value);
+                    break;
+                case "password":
+                    docWebElem.password.clear();
+                    docWebElem.password.sendKeys(value);
+                    break;
+                case "loginButton":
+                    docWebElem.loginButton.click();
+                default:
+                    System.out.println("No matching field found for key: " + key);
+            }
+        }
+
+
+    }
 }
