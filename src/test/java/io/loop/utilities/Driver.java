@@ -59,6 +59,24 @@ public class Driver {
                     drivePool.get().manage().window().maximize();
                     drivePool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.valueOf(ConfigurationReader.getProperty("timeout"))));
                     break;
+                case "remote-chrome-linux":
+                    try {
+                        // assign your grid server address
+                        String gridAddress = "18.212.164.52";
+                        URL url = new URL("http://" + gridAddress + ":4444/wd/hub");
+                        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+                        ChromeOptions chromeOptions = new ChromeOptions();
+                        chromeOptions.addArguments("--headless");
+                        chromeOptions.addArguments("--no-sandbox");
+                        chromeOptions.addArguments("--disable-dev-shm-usage");
+                        desiredCapabilities.merge(chromeOptions);
+                        //Driver.getDriver() = new RemoteWebDriver(url, desiredCapabilities);
+                        // driver = new RemoteWebDriver(url, desiredCapabilities);
+                        drivePool.set(new RemoteWebDriver(url, desiredCapabilities));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    break;
 
             }
 

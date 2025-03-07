@@ -1,6 +1,5 @@
 Feature: User enter many data
 
-  @test2
   Scenario: user enter pass multiple data
     Given  user on google page
     Then user enter data
@@ -10,7 +9,6 @@ Feature: User enter many data
       | Home   |
 
 
-  @test3
   Scenario Outline: user enter pass multiple data
     Given  user on google page
     Then user search "<Country>"

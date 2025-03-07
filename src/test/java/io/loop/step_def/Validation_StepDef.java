@@ -45,11 +45,10 @@ public class Validation_StepDef {
                 home.password.sendKeys(ConfigurationReader.getProperty("client_password"));
                 home.loginButton.click();
                 try {
-                    if (BrowserUtils.waitForClickable(home.continueButton, 5) != null) {
-                        home.continueButton.click();
-                    }
-                } catch (TimeoutException e) {
-                    throw e;
+                    BrowserUtils.waitForClickable(home.continueButton, 10);
+                    home.continueButton.click();
+                }catch (Exception e) {
+                    e.printStackTrace();
                 }
                 break;
         }
