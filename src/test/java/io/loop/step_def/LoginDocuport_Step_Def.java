@@ -8,6 +8,7 @@ import io.loop.utilities.BrowserUtils;
 import io.loop.utilities.ConfigurationReader;
 import io.loop.utilities.Driver;
 import org.junit.Assert;
+import org.openqa.selenium.ElementClickInterceptedException;
 
 import java.util.Map;
 
@@ -37,7 +38,11 @@ public class LoginDocuport_Step_Def  {
 
     @When("user click continue button")
     public void userClickContinueButton() {
-        BrowserUtils.waitForClickable(docWebElem.continueButton,10).click();
+        try {
+            BrowserUtils.waitForClickable(docWebElem.continueButton,10).click();
+        }catch (ElementClickInterceptedException e){
+            BrowserUtils.waitForClickable(docWebElem.continueButton,10).click();
+        }
 
     }
     @When("user should see {string} page")
@@ -54,6 +59,7 @@ public class LoginDocuport_Step_Def  {
 
     @Given("User login with Map")
     public void userLogin(Map<String, String> data) {
+        Driver.getDriver().get(ConfigurationReader.getProperty("docuport.ui.url"));
         for (Map.Entry<String, String> entry : data.entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
