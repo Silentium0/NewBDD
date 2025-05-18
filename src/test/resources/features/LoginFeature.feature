@@ -2,7 +2,7 @@ Feature:  Docuport LogIn feature
   Background: run first of all
     Given user on Docuport login page page
 
-
+   @login
   Scenario: login as a client
     When user enter username "b1g3_client@gmail.com"
     When user enter password "Group3"

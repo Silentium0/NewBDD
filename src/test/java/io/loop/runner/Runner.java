@@ -9,12 +9,11 @@ import org.junit.runner.RunWith;
 
         plugin = {"html:target/html-reports/cucumber-report.html",
                 "json:target/json-reports/json-report.json",
-                "rerun:target/rerun.txt",
-                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
+                "rerun:target/rerun.txt"},
         features = "src/test/resources/features",
         glue = "io/loop/step_def",
         dryRun = false,
-        tags = "@smoke"
+        tags = "@deleteclient"
 )
 
 public class Runner {

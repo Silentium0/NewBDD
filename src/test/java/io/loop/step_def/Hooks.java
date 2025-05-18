@@ -33,7 +33,7 @@ public class Hooks {
             scenario.attach(screenshot, "image/png", scenario.getName());
         }
         log.info("END");
-        Driver.closeDriver();
+        //Driver.closeDriver();
     }
 
     //@AfterStep

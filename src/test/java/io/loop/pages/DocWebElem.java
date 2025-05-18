@@ -1,6 +1,7 @@
 package io.loop.pages;
 
 import io.loop.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,6 +23,13 @@ public class DocWebElem {
 
     @FindBy(xpath = "//span[contains(text(),'Home')]")
     public WebElement Home;
+
+    @FindBy(xpath = "//thead[@class='v-data-table-header']/following-sibling::tbody/tr[10]/td/div/div/i/following-sibling::div")
+    public WebElement checkbox;
+
+    @FindBy(xpath = "//*[normalize-space(text())='Remove']/..")
+    public WebElement remove;
+
 
 
 

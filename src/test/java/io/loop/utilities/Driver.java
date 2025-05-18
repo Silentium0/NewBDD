@@ -1,6 +1,7 @@
 package io.loop.utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -51,11 +52,11 @@ public class Driver {
                     drivePool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.valueOf(ConfigurationReader.getProperty("timeout"))));
                     break;
                 case "headless":
-                    ChromeOptions options = new ChromeOptions();
-                    options.addArguments("--headless");
-                    options.addArguments("--start-maximized");
+                    ChromeOptions options1 = new ChromeOptions();
+                    options1.addArguments("--headless");
+                    options1.addArguments("--start-maximized");
                     WebDriverManager.chromedriver().setup();
-                    drivePool.set(new ChromeDriver(options));
+                    drivePool.set(new ChromeDriver(options1));
                     drivePool.get().manage().window().maximize();
                     drivePool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.valueOf(ConfigurationReader.getProperty("timeout"))));
                     break;
