@@ -20,6 +20,7 @@ public class Form {
     public void user_is_already_logged_in_and_navigated_to_order_page() {
         Driver.getDriver().get(ConfigurationReader.getProperty("form"));
         form.setLogin();
+
     }
 
     @When("user selects product type {string}")

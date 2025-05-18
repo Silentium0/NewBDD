@@ -5,6 +5,7 @@ import io.cucumber.java.en.Then;
 import io.loop.pages.DocWebElem;
 import io.loop.utilities.BrowserUtils;
 import io.loop.utilities.ConfigurationReader;
+import io.loop.utilities.DocuportUtils;
 import io.loop.utilities.Driver;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -71,5 +72,9 @@ public class Validation_StepDef {
                 Assert.assertEquals(expectedSubItems, menuItem.getText());
             }
         }
+
+        DocuportUtils.logOut(Driver.getDriver());
+
+
     }
 }

@@ -25,14 +25,17 @@ public class DocWebElem {
     @FindBy(xpath = "//span[contains(text(),'Home')]")
     public WebElement Home;
 
+    @FindBy(xpath = "//thead[@class='v-data-table-header']/following-sibling::tbody/tr[10]/td/div/div/i/following-sibling::div")
+    public WebElement checkbox;
+
+    @FindBy(xpath = "//*[normalize-space(text())='Remove']/..")
+    public WebElement remove;
+
     @FindBy(xpath = "//label[contains(text(),'Recipient')]/following-sibling::input")
     public WebElement inputField;
 
     @FindBy(xpath = "//label[contains(text(),'Sent')]/../div")
     public WebElement sent;
-
-
-
 
     public static void  validateText(String text) {
         WebElement element = Driver.getDriver().findElement(By.xpath("//*[contains(text(),'" + text + "')]"));

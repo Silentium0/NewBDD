@@ -59,12 +59,12 @@ public class DocuportUtils {
 
     /**
      * logs out from app
-     * @param driver
+     *
      * @author sergii
      */
 
 
-    public static void logOut(WebDriver driver) throws InterruptedException {
+    public static void logOut(WebDriver driver)  {
         Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         WebElement userIcon =  Driver.getDriver().findElement(By.xpath("//div[@class='v-avatar primary']"));
         userIcon.click();

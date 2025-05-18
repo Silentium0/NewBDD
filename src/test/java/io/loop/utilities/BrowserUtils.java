@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import javax.xml.validation.Validator;
+import java.nio.file.Path;
 import java.time.Duration;
 import java.util.List;
 import java.util.Set;
@@ -148,7 +149,6 @@ public class BrowserUtils {
     public static WebElement waitForVisibility(WebElement element, int timeToWaitInSec){
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeToWaitInSec));
         return wait.until(ExpectedConditions.visibilityOf(element));
-
     }
 
     /**
@@ -229,10 +229,26 @@ public class BrowserUtils {
 
     public static  void justClick(String name){
         try {
+         
+            Driver.getDriver().findElement(By.xpath("//*[normalize-space(text())='" +name+ "']")).click();
+        }catch (StaleElementReferenceException e){
+            e.printStackTrace();
+        }
+    }
+
+    public static String  validateText(String text){
+        try {
+            WebElement element = Driver.getDriver().findElement(By.xpath("//*[text()='" + text + "']"));
+            return element.getText().trim();
+        }catch (StaleElementReferenceException e ){
+            e.printStackTrace();
+        }
+        return null;
             Driver.getDriver().findElement(By.xpath("//*[contains(text(),'"+name+"')]")).click();
         }catch (StaleElementReferenceException e){
             Driver.getDriver().findElement(By.xpath("//*[contains(text(),'"+name+"')]")).click();
         }
+
     }
 
     public static void waitForStaleElement(WebElement element) {
