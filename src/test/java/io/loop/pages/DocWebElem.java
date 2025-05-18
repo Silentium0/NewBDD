@@ -1,6 +1,7 @@
 package io.loop.pages;
 
 import io.loop.utilities.Driver;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -30,7 +31,16 @@ public class DocWebElem {
     @FindBy(xpath = "//*[normalize-space(text())='Remove']/..")
     public WebElement remove;
 
+    @FindBy(xpath = "//label[contains(text(),'Recipient')]/following-sibling::input")
+    public WebElement inputField;
 
+    @FindBy(xpath = "//label[contains(text(),'Sent')]/../div")
+    public WebElement sent;
+
+    public static void  validateText(String text) {
+        WebElement element = Driver.getDriver().findElement(By.xpath("//*[contains(text(),'" + text + "')]"));
+        Assert.assertEquals(text,element.getText());
+    }
 
 
     public DocWebElem() {

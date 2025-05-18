@@ -229,6 +229,7 @@ public class BrowserUtils {
 
     public static  void justClick(String name){
         try {
+         
             Driver.getDriver().findElement(By.xpath("//*[normalize-space(text())='" +name+ "']")).click();
         }catch (StaleElementReferenceException e){
             e.printStackTrace();
@@ -243,13 +244,39 @@ public class BrowserUtils {
             e.printStackTrace();
         }
         return null;
+            Driver.getDriver().findElement(By.xpath("//*[contains(text(),'"+name+"')]")).click();
+        }catch (StaleElementReferenceException e){
+            Driver.getDriver().findElement(By.xpath("//*[contains(text(),'"+name+"')]")).click();
+        }
+
     }
 
+    public static void waitForStaleElement(WebElement element) {
+        int y = 0;
+
+        while (y <= 15) {
+            try {
+                element.isDisplayed();
+                break;
+            } catch (StaleElementReferenceException st) {
+                y++;
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException i) {
+                    i.printStackTrace();
+                }
+            } catch (WebDriverException we) {
+                y++;
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException i) {
+                    i.printStackTrace();
+                }
+            }
+        }
 
 
-
-
-
+    }
 
 
 
